@@ -5,9 +5,9 @@ function Counter (){
     useState(0);
 
     //Function to handle increment, decrement and reset actions
-    const increment=()=>
+    const Increment=()=>
         setCount(count +1);
-    const decrement =()=>
+    const Decrement =()=>
         setCount(count -1);
     const reset =()=> setCount(0);
 
