@@ -7,7 +7,7 @@ function Navbar(){
         padding:'20px',
         margin:'15px 0',
         borderRadius:'8px',
-        boxShadow: '0 4px 8px rgba (0,0,0.1)>
+        boxShadow: '0 4px 8px rgba (0,0,0.1), display:'justifyContent'>
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/services">Services</Link></li>
