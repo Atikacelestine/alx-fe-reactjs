@@ -12,7 +12,7 @@ export const UserProvider =
     useState ({
         name:"Jane Doe",
         age: 30,
-        bio:"Software developer",
+        email:janedoe@gmail.com;
     });
 
     return (
