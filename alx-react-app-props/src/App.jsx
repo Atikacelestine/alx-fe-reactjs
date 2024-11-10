@@ -12,6 +12,10 @@ function App(){
         <ProfilePage/>
     </div>
 </UserProvider>
+  <UserContext.Provider 
+  value={{userData,setUserData}}>
+{children}
+</UserContext.Provider>
   );
 }
 
