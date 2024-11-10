@@ -22,7 +22,11 @@ function Counter (){
             }}>Current Count:{count}</p>
 
             {/*Buttons for controlling the counter*/}
-            <button onClick= {Increment}
+            
+         <p>Current Count: {count}</p>
+         <button onClick={() => setCount(count + 1)}>Increment</button>
+         <button onClick={() => setCount(count - 1)}>Decrement</button>
+         <button onClick={() => setCount(0)}
             style={{margin:'15px',padding:'10px',fontSize:'16px'}}>
                 Reset
             </button>
