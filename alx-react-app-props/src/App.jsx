@@ -1,13 +1,9 @@
 import React from 'react';
-import { UserProvider } from './UserContext';
-
-
 import ProfilePage from './ProfilePage';
-
-function App() {
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
-
-  return <ProfilePage userData={userData} />;
+import { UserProvider } from './UserContext';
+function App(){
+  return(
+    <ProfilePage userData={userData} />;
 <UserProvider>
     <div>
         <h1>
@@ -16,7 +12,7 @@ function App() {
         <ProfilePage/>
     </div>
 </UserProvider>
-  
+  );
 }
 
 export default App;
