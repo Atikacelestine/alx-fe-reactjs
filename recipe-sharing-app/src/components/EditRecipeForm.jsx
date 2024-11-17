@@ -10,8 +10,9 @@ const EditRecipeForm = ({ recipeId, onClose }) => {
     description: recipe.description,
   });
 
+  
   const handleSubmit = (e) => {
-    e.preventDefault();
+    event.preventDefault();
     updateRecipe({ id: recipeId, ...updatedRecipe });
     onClose(); // Close the form after saving
   };
