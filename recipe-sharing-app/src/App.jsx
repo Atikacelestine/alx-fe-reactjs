@@ -8,8 +8,8 @@ import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './components/DeleteRecipeButton';
 import FavoritesList from './FavoritesList';
 import RecommendationsList from './RecommendationsList';
-import AddReceipeForm from './components/AddReipeForm';
-import ReceipeList from './components/Receipelist';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeList from './components/Recipelist';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function App() {
   const [count, setCount] = useState(0)
