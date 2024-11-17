@@ -1,5 +1,16 @@
 import React from "react"
+const UserProfile = () => {
+  const { userData, setUserData } = useContext(UserContext);
 
+  const handleUpdateName = () => {
+    const newName = prompt("Enter a new name:");
+    if (newName) {
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        name: newName,
+      }));
+    }
+  };
 const UserProfile = (props) =>{
     return(
         <div style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
