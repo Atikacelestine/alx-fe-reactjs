@@ -25,7 +25,14 @@ import create from 'zustand'
             : true)
         ),
       })),
-  
+    
+    // Action to set the entire recipes array (e.g., fetched from an API)
+  setRecipes: (newRecipes) =>
+    set(() => ({
+      recipes: newRecipes,
+    })),
+
+    
     // Update search term
     setSearchTerm: (term) =>
       set((state) => ({
