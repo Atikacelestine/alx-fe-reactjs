@@ -32,6 +32,19 @@ import create from 'zustand'
       recipes: newRecipes,
     })),
 
+    // Action to update an existing recipe by ID
+  updateRecipe: (updatedRecipe) =>
+    set((state) => ({
+      recipes: state.recipes.map((recipe) =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+      ),
+    })),
+
+  // Action to delete a recipe by ID
+  deleteRecipe: (recipeId) =>
+    set((state) => ({
+      recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
+    })),
     
     // Update search term
     setSearchTerm: (term) =>
