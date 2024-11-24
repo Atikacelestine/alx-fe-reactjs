@@ -20,9 +20,12 @@ const PostsComponent = () => {
     return <p>Loading...</p>;
   }
 
-  if (isError) {
-    return <p>Error fetching posts.</p>;
-  }
+  
+    if (isError) {
+  return <p style={{ color: 'red' }}>Error: {error.message}</p>;
+}
+
+
 
 
   return (
