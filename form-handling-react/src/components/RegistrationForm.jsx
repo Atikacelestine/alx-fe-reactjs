@@ -10,6 +10,12 @@ const RegistrationForm = () => {
     e.preventDefault();
     if (!username || !email || !password) {
       setError('All fields are required');
+     
+      if (!email) {
+      setError('All fields are required');
+       
+        if (!password) {
+      setError('All fields are required');
     } else {
       setError('');
       alert(`Registration Successful: ${username}, ${email}`);
