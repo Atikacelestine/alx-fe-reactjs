@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+ const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!username || !email || !password) {
+      setError('All fields are required');
+    } else {
+      setError('');
+      alert(`Registration Successful: ${username}, ${email}`);
+    }
+  };
+
 
   const [errors, setErrors] = useState('');
 
@@ -13,16 +23,9 @@ const RegistrationForm = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+ });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.username || !formData.email || !formData.password) {
-      setErrors('All fields are required!');
-    } else {
-      setErrors('');
-      console.log('Form Submitted', formData);
-    }
-  };
+  
 
   return (
     <form onSubmit={handleSubmit}>
