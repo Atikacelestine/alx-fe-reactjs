@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {},
   },
+   variants: { extend: {} },
   plugins: [],
 }
 module.exports = {
