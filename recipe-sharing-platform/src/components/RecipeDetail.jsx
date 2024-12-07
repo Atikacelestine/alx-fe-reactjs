@@ -42,7 +42,7 @@ const RecipeDetail = () => {
 
       {/* Cooking Instructions Section */}
       <div className="mt-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cooking Instructions</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cooking instructions</h2>
         <ol className="list-decimal pl-5 text-gray-600">
           <li>Step 1: Preheat the oven to 350°F.</li>
           <li>Step 2: Prepare the ingredients.</li>
