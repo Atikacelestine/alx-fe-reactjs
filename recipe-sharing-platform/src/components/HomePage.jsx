@@ -21,6 +21,13 @@ const HomePage = () => {
             key={recipe.id}
             className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-4"
           >
+<Link
+  to="/add-recipe"
+  className="text-blue-600 hover:underline font-semibold"
+>
+  Add New Recipe
+</Link>
+            
             <Link to={`/recipe/${recipe.id}`}>
             <img
               src={recipe.image}
