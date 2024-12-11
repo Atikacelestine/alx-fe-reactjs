@@ -22,7 +22,7 @@ const Search = () => {
     const query = [
         username ? `user:${username}` : '',
         location ? `location:${location}` : '',
-        minRepos ? `repos:>${minRepos}` : '',
+        minRepos ? `minRepos:>${minRepos}` : '',
       ]
         .filter(Boolean)
         .join(' ');
