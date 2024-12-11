@@ -2,6 +2,12 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.github.com';
 
+/**
+ * Fetches GitHub users based on advanced search criteria.
+ * @param {string} query - The search query string with advanced parameters.
+ * @returns {Promise<Object>} - The search results from the GitHub API.
+ */
+
 export const fetchUserData = async (username) => {
   try {
     const response = await axios.get(`${BASE_URL}/users/${username}`, {
