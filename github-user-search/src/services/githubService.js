@@ -24,10 +24,11 @@ export const searchUsers = async (query, location = '', minRepos = 0) => {
     if (minRepos > 0) {
       searchQuery += `+repos:>=${minRepos}`;
     }
-
-    const response = await axios.get(`${BASE_URL}?q=${searchQuery}`);
-      headers: {
-        Authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
+const headers = {
+  Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+};
+    
+    const response = await axios.get(`${BASE_URL}?q=${searchQuery}` , {header});
       },
     });
     return response.data;
