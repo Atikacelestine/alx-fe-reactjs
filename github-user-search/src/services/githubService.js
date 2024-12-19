@@ -1,17 +1,31 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com';
+const BASE_URL = 'https://api.github.com'
+
 
 /**
- * Fetches GitHub users based on advanced search criteria.
- * @param {string} query - The search query string with advanced parameters.
- * @returns {Promise<Object>} - The search results from the GitHub API.
+ * Search for GitHub users based on query parameters.
+ * 
+ * @param {string} query - The search query (e.g., username or part of a username).
+ * @param {string} location - Filter by user location (optional).
+ * @param {number} minRepos - Minimum number of repositories (optional).
+ * @returns {Promise<Object>} - A promise that resolves to the search results.
  */
-
-export const fetchUserData = async (username) => {
+export const searchUsers = async (query, location = '', minRepos = 0) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/${username}`, {
-        params: {q: query},
+    let searchQuery = query;
+
+    // Append location filter if provided
+    if (location) {
+      searchQuery += `+location:${location}`;
+    }
+
+    // Append minimum repositories filter if provided
+    if (minRepos > 0) {
+      searchQuery += `+repos:>=${minRepos}`;
+    }
+
+    const response = await axios.get(`${BASE_URL}?q=${searchQuery}`);
       headers: {
         Authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
       },
